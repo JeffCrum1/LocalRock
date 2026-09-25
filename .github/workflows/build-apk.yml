@@ -1,5 +1,5 @@
 name: Build v1 APK
-on: [workflow_dispatch] # Allows you to manually click a button to start the build
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -7,7 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 'v1.0.0' # Forces GitHub to pull the specific v1.0 source code branch/tag
+          repository: 'DonSidro/LocalRock' # Forces it to look at the source repo
+          ref: 'v1.0.0'                    # Pulls the official v1.0.0 release tag
           
       - name: set up JDK 17
         uses: actions/setup-java@v4
